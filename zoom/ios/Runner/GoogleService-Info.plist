@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>231401338302-ln45dr97tf7e5nroqbku1h9e0fdlevcq.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.231401338302-ln45dr97tf7e5nroqbku1h9e0fdlevcq</string>
+	<key>API_KEY</key>
+	<string>AIzaSyD06Yw-melH5oo5IgLvm1jyo5XiI6QwRYo</string>
+	<key>GCM_SENDER_ID</key>
+	<string>231401338302</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.zoom</string>
+	<key>PROJECT_ID</key>
+	<string>zoom-9fb28</string>
+	<key>STORAGE_BUCKET</key>
+	<string>zoom-9fb28.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:231401338302:ios:bedf4a3c4acedba287f5ef</string>
+</dict>
+</plist>

@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:login_page/components/my_textfield.dart';
 import 'package:login_page/components/square_tile.dart';
@@ -10,6 +12,7 @@ class LoginPage extends StatelessWidget {
   final usernameController = TextEditingController();
   final passwordController = TextEditingController();
 
+
   // sign user in method
   void signUserIn(){}
 
@@ -17,134 +20,125 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[300],
-      body: SafeArea(
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const SizedBox(height: 50),
-             const Icon(
-               Icons.lock,
-               size: 100,
-             ),
-              const SizedBox(height: 50),
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("lib/images/vector_bg.png"),
+            fit: BoxFit.cover,
+          )
+        ),
+        child: SafeArea(
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
 
-              Text('Welcome back you\'ve been missed!',
-                style: TextStyle(
-                  color: Colors.grey[700],
-                  fontSize: 16,
-                ),
-              ),
+                 Padding(
+                   padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                   child: Column(
+                    children: const [
+                      Text(
+                          "Sign up",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 33,
+                            fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                 ),
 
-              const SizedBox(height: 25),
+                const SizedBox(height: 30),
 
-              //username textField
-              MyTextField(
-                controller: usernameController,
-                hintText: 'Username',
-                obscureText: false,
-              ),
+                Container(
 
-              const SizedBox(height: 10),
+                  child: Column(
+                    crossAxisAlignment:  CrossAxisAlignment.start,
+                    children: const [
+                      Text(
+                        'Looks like you don\'t have an account.',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 16,
+                        ),
+                      ),
+                      Text(
+                        'Let\'s create a new account for',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 16,
+                        ),
+                      ),
+                      Text(
+                        'jane.doe@gmail.com',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold
+                        ),
+                      ),
+                    ],
+                  ),
 
-              // password textField
-              MyTextField(
-                controller: passwordController,
-                hintText: 'Password',
-                obscureText: true,
-              ),
+                  const SizedBox(height: 20),
 
-              const SizedBox(height: 10),
+                  //username textField
+                  MyTextField(
+                    controller: usernameController,
+                    hintText: 'Name',
+                    obscureText: false,
+                  ),
 
-              // forget password
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Row(
-                      children: [
+                  const SizedBox(height: 15),
+
+                  // password textField
+                  MyTextField(
+                    controller: passwordController,
+                    hintText: 'Password',
+                    obscureText: true,
+                  ),
+
+                  const SizedBox(height: 25),
+
+                  // forget password
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 28),
+                    child: Column(
+                      crossAxisAlignment:  CrossAxisAlignment.start,
+                      children: const [
                         Text(
-                          'Forgot Password?',
-                          style: TextStyle(color: Colors.grey[600]),
+                          'By selecting agree and continue below,',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16
+                          ),
+                        ),
+                        Text(
+                          'I agree to terms of service and privacy policy',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold
+                          ),
                         ),
                       ],
                     ),
-                  ],
+                  ),
+
+                  const SizedBox(height: 25),
+
+                  // Sign in Button
+                  MyButton(
+                    onTap: signUserIn,
+                  ),
+
+                  const SizedBox(height: 50),
+
                 ),
-              ),
-
-              const SizedBox(height: 25),
-
-              // Sign in Button
-              MyButton(
-                onTap: signUserIn,
-              ),
-
-              const SizedBox(height: 50),
-
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                child: Row(children: [
-                  Expanded(
-                      child: Divider(
-                        thickness: 0.5,
-                        color: Colors.grey[400],
-                      ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                    child: Text(
-                      'Or continue with',
-                      style: TextStyle(color: Colors.grey[700]),
-                    ),
-                  ),
-                  Expanded(
-                    child: Divider(
-                      thickness: 0.5,
-                      color: Colors.grey[400],
-                    ),
-                  ),
-                ],
-                ),
-              ),
-
-              const SizedBox(height: 50),
-
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  // google button
-                  SquareTile(imagePath: 'lib/images/google.png',),
-
-                  SizedBox(width: 20),
-                  SizedBox(width: 20),
-                  // apple button
-                  SquareTile(imagePath: 'lib/images/apple.png',),
-                ],
-              ),
-
-              const SizedBox(height: 50),
-
-              // not a member
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    'Not a member?',
-                    style: TextStyle(color: Colors.grey[700]),
-                  ),
-                  const SizedBox(width: 4,),
-                  const Text(
-                    'Register now',
-                    style: TextStyle(
-                        color: Colors.blue,
-                        fontWeight: FontWeight.bold
-                    ),
-                  ),
-                ],
-              )
-            ],
+              ],
+            ),
           ),
         ),
       ),
